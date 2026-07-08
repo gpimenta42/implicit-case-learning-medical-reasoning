@@ -1,0 +1,7 @@
+sample_id,sample_stratum,dataset_name,dataset_family,canonical_question_key,question_index,meta_info,pna_year,pna_part,pna_question_number,ground_truth,ground_truth_text,difficulty,panel_item_accuracy,question_with_options,question_key,dataset_split,language,panel_original_difficulty,panel_original_accuracy,valid_options
+dummy_target_001,dummy_easy,medqa_test,medqa,dummy:test:stemi_001,1,dummy,,,,B,Immediate coronary angiography with percutaneous coronary intervention,medium,0.5,"A 58-year-old man with hypertension has 45 minutes of crushing substernal chest pain radiating to the left arm. He is diaphoretic, and ECG shows ST-segment elevations in leads II, III, and aVF. Which of the following is the best next step in management?
+(A) Oral omeprazole and outpatient follow-up
+(B) Immediate coronary angiography with percutaneous coronary intervention
+(C) Inhaled albuterol and systemic corticosteroids
+(D) High-dose amoxicillin for otitis media
+(E) Reassurance and discharge home",dummy:test:stemi_001,test,en,medium,0.5,"[""A"", ""B"", ""C"", ""D"", ""E""]"

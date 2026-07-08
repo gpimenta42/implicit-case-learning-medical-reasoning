@@ -1,0 +1,25 @@
+sample_id,sample_stratum,dataset_name,dataset_family,canonical_question_key,question_key,question_index,meta_info,dataset_split,language,ground_truth,ground_truth_text,difficulty,question_with_options,valid_options
+dummy_source_001,related,medqa_train,medqa,dummy:train:stemi_001,dummy:train:stemi_001,101,dummy,train,en,B,Immediate percutaneous coronary intervention,medium,"A 63-year-old man presents with severe substernal chest pressure, diaphoresis, and ST-segment elevations in the inferior leads. Which management step is most appropriate?
+(A) Schedule an outpatient stress test
+(B) Immediate percutaneous coronary intervention
+(C) Treat with inhaled bronchodilators
+(D) Start oral antibiotics for otitis media
+(E) Provide reassurance only","[""A"", ""B"", ""C"", ""D"", ""E""]"
+dummy_source_002,related,medqa_train,medqa,dummy:train:acs_002,dummy:train:acs_002,102,dummy,train,en,C,Acute myocardial infarction,medium,"A 55-year-old smoker develops crushing chest pain radiating to the jaw. Serum troponin is elevated several hours later. Which diagnosis best explains this presentation?
+(A) Gastroesophageal reflux disease
+(B) Acute otitis media
+(C) Acute myocardial infarction
+(D) Asthma exacerbation
+(E) Tension headache","[""A"", ""B"", ""C"", ""D"", ""E""]"
+dummy_source_003,unrelated,medqa_train,medqa,dummy:train:asthma_003,dummy:train:asthma_003,103,dummy,train,en,A,Inhaled albuterol,medium,"A 22-year-old woman with episodic wheezing and chest tightness improves after using a short-acting beta agonist. Which treatment provides the fastest symptom relief?
+(A) Inhaled albuterol
+(B) Immediate coronary angiography
+(C) Tympanostomy tube placement
+(D) Proton pump inhibitor therapy
+(E) High-dose aspirin only","[""A"", ""B"", ""C"", ""D"", ""E""]"
+dummy_source_004,unrelated,medqa_train,medqa,dummy:train:otitis_004,dummy:train:otitis_004,104,dummy,train,en,D,Acute otitis media,medium,"A 4-year-old child has fever, ear pain, and a bulging erythematous tympanic membrane after an upper respiratory infection. What is the most likely diagnosis?
+(A) Myocardial infarction
+(B) Asthma exacerbation
+(C) Gastroesophageal reflux disease
+(D) Acute otitis media
+(E) Pulmonary embolism","[""A"", ""B"", ""C"", ""D"", ""E""]"

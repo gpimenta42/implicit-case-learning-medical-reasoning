@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" role="img" aria-labelledby="title desc">
+  <title id="title">Example ICL-EDR CLI show-details output</title>
+  <desc id="desc">A terminal-style preview of the colored CLI output for ICL-EDR with target question, retrieved cases, solver reasoning, and output files.</desc>
+  <rect width="1120" height="720" rx="14" fill="#111827"/>
+  <rect x="0" y="0" width="1120" height="42" rx="14" fill="#1f2937"/>
+  <circle cx="24" cy="21" r="6" fill="#ef4444"/>
+  <circle cx="46" cy="21" r="6" fill="#f59e0b"/>
+  <circle cx="68" cy="21" r="6" fill="#22c55e"/>
+  <text x="92" y="26" fill="#d1d5db" font-family="SFMono-Regular, Consolas, Menlo, monospace" font-size="14">python scripts/run_icl_edr.py --run-name example_icl_edr_cli --show-details</text>
+
+  <g font-family="SFMono-Regular, Consolas, Menlo, monospace" font-size="15">
+    <text x="28" y="76" fill="#22d3ee" font-weight="700">ICL-EDR summary from existing outputs</text>
+    <text x="28" y="106" fill="#f9fafb" font-weight="700">Run name:</text>
+    <text x="126" y="106" fill="#e5e7eb">example_icl_edr_cli</text>
+    <text x="28" y="132" fill="#f9fafb" font-weight="700">Output:</text>
+    <text x="96" y="132" fill="#38bdf8">results/run_outputs/example_icl_edr_cli</text>
+
+    <text x="28" y="172" fill="#f9fafb" font-weight="700">Results:</text>
+    <text x="52" y="200" fill="#e5e7eb">ICL-EDR | medqa_test | n=1 | accuracy=</text>
+    <text x="438" y="200" fill="#22c55e">100.0%</text>
+    <text x="500" y="200" fill="#e5e7eb"> | tokens/q=866 | API calls/q=1.0 | judge rate=0.0%</text>
+    <text x="28" y="236" fill="#f9fafb" font-weight="700">First question:</text>
+    <text x="172" y="236" fill="#e5e7eb">selected=B, gold=B, correct=</text>
+    <text x="442" y="236" fill="#22c55e">True</text>
+
+    <text x="28" y="286" fill="#22d3ee" font-weight="700">Details (first 1 question)</text>
+    <text x="28" y="320" fill="#f9fafb" font-weight="700">Question 1: dummy:test:stemi_001</text>
+    <text x="52" y="348" fill="#e5e7eb">Gold: B | selected: B | correct: True | final source: solver_agreement</text>
+
+    <text x="52" y="388" fill="#f9fafb" font-weight="700">Target question:</text>
+    <text x="76" y="416" fill="#67e8f9">A 58-year-old man with hypertension has 45 minutes of crushing substernal chest pain</text>
+    <text x="76" y="440" fill="#67e8f9">radiating to the left arm. ECG shows ST-segment elevations in II, III, and aVF.</text>
+    <text x="76" y="464" fill="#67e8f9">(A) Oral omeprazole  (B) Immediate coronary angiography with PCI  (C) Albuterol...</text>
+
+    <text x="52" y="506" fill="#f9fafb" font-weight="700">Retrieved cases:</text>
+    <text x="76" y="534" fill="#60a5fa">1. dummy:train:stemi_001, sim=0.874 - Gold answer: B. Immediate PCI</text>
+    <text x="76" y="558" fill="#60a5fa">2. dummy:train:acs_002, sim=0.685 - Gold answer: C. Acute myocardial infarction</text>
+
+    <text x="52" y="602" fill="#f9fafb" font-weight="700">Solver reasoning (ensemble agreed on B):</text>
+    <text x="76" y="630" fill="#d8b4fe">solver 0: The patient has classic acute STEMI with crushing chest pain, diaphoresis,</text>
+    <text x="76" y="654" fill="#d8b4fe">and inferior ST elevations. The best next step is urgent reperfusion with PCI.</text>
+
+    <text x="52" y="692" fill="#f9fafb" font-weight="700">Files:</text>
+    <text x="112" y="692" fill="#38bdf8">summary_by_setting_method_dataset.csv, per_question_results.csv, outputs.jsonl</text>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+method,combined_acc,calls_per_question,tokens_per_question,group
+ICL-EDR,73.92,1.2,2956,medium
+CoT (xhigh),73.67,1.0,3191,xhigh_cot
+MedLA,73.5,26.95,97638,medium
+MedPrompt,72.33,6.99,15277,medium
+iMedRAG,72.0,17.94,89370,medium
+SC Routed Judge,71.56,1.29,3795,medium
+Self Consistency,69.11,1.0,2874,medium
+MDAgents,68.0,26.7,48418,medium
+CoT (medium),66.78,1.0,997,medium
