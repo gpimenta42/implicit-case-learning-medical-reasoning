@@ -1,6 +1,6 @@
 # Efficient Test-Time Scaling for Medical Reasoning
 
-**An Implicit Case-Learning Ensemble with Disagreement-Routed Revision (ICL-EDR).**
+**Implicit Case-Learning Ensemble with Disagreement-Routed Revision (ICL-EDR).**
 
 This clean release accompanies the thesis experiments on **Implicit Case-Learning Ensemble with Disagreement-Routed Revision (ICL-EDR)**. ICL-EDR is a compact test-time scaling method for medical multiple-choice question (MCQ) reasoning: it retrieves target-similar labelled cases without generated source rationales, generates a small solver ensemble, and routes mixed ensembles to a revision judge.
 
