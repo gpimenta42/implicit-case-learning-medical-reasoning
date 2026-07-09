@@ -12,7 +12,7 @@ The main experiments evaluate ICL-EDR on balanced-difficulty MedQA and Portugues
 
 ## Main Interpretation
 
-ICL-EDR achieved the highest combined accuracy point estimate on the MedQA+PNA panel, with a bootstrap-significant gain over medium-reasoning CoT. It was not clearly separated, however, from the strongest alternative baselines or from maximum-reasoning CoT. On PNA, ICL-EDR and MedPrompt were the only methods with bootstrap-significant gains over the CoT baseline.
+ICL-EDR achieved the highest combined accuracy point estimate on the MedQA+PNA panel (73.92%), with a bootstrap-significant gain over medium-reasoning CoT (66.78%; +7.14 pp). It was not clearly separated, however, from the strongest alternative baselines or from maximum-reasoning CoT. On PNA, ICL-EDR and MedPrompt were the only methods with bootstrap-significant gains over the CoT baseline.
 
 The main efficiency result is that ICL-EDR reaches this accuracy at a token cost comparable to maximum-reasoning CoT and self-consistency baselines. It uses about 3x the token cost of medium-reasoning CoT, has similar combined accuracy to maximum-reasoning CoT, and uses substantially fewer tokens than higher-budget medical-specific TTS baselines: MedPrompt uses 5.2x as many tokens per question, MDAgents 16.4x, iMedRAG 30.2x, and MedLA 33.0x.
 
