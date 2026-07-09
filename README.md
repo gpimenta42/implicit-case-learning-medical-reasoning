@@ -2,6 +2,8 @@
 
 **Implicit Case-Learning Ensemble with Disagreement-Routed Revision (ICL-EDR).**
 
+*Code implementation for the Master's thesis in Data Science and Advanced Analytics, NOVA Information Management School (NOVA IMS), Universidade NOVA de Lisboa. Lisbon, July 2026.*
+
 This clean release accompanies the thesis experiments on **Implicit Case-Learning Ensemble with Disagreement-Routed Revision (ICL-EDR)**. ICL-EDR is a compact test-time scaling method for medical multiple-choice question (MCQ) reasoning: it retrieves target-similar labelled cases without generated source rationales, generates a small solver ensemble, and routes mixed ensembles to a revision judge.
 
 The selected ICL-EDR workflow retrieves two similar answer-labelled cases, generates a three-completion solver ensemble, and routes only mixed ensembles to a revision judge.
@@ -204,7 +206,10 @@ If you use this repository, please cite the thesis:
 @mastersthesis{pimentapereira2026efficientttsmedicalreasoning,
   title = {Efficient Test-Time Scaling for Medical Reasoning: Implicit Case-Learning Ensemble with Disagreement-Routed Revision},
   author = {Pimenta Pereira, Gaspar},
-  school = {NOVA Information Management School},
+  school = {NOVA Information Management School, Universidade NOVA de Lisboa},
+  type = {Master's thesis},
+  address = {Lisbon, Portugal},
+  month = jul,
   year = {2026}
 }
 ```
