@@ -8,7 +8,7 @@ The selected ICL-EDR workflow retrieves two similar answer-labelled cases, gener
 
 ![ICL-EDR architecture](figures/icl_edr_architecture.png)
 
-The main experiments evaluate ICL-EDR on balanced-difficulty MedQA and Portuguese National Residency Access Examination (PNA) panels using GPT-5.4-nano with medium reasoning effort. The method is compared with general test-time scaling baselines (CoT, Self Consistency, and Self-Consistency Routed Judge), medical-specific baselines (MedPrompt, MDAgents, MedLA, and iMedRAG), and the same model run with maximum reasoning effort.
+The main experiments evaluate ICL-EDR on balanced-difficulty MedQA and Portuguese National Residency Access Examination (PNA) panels using GPT-5.4-nano with medium reasoning effort. The method is compared with general test-time scaling baselines (CoT, Self Consistency, and Self-Consistency Routed Judge), medical-specific baselines ([MedPrompt](https://arxiv.org/abs/2311.16452), [MDAgents](https://arxiv.org/abs/2404.15155), [MedLA](https://ojs.aaai.org/index.php/AAAI/article/view/37052), and [iMedRAG](https://doi.org/10.1142/9789819807024_0015)), and the same model run with maximum reasoning effort. The routed-judge self-consistency baseline follows the [EnsReas](https://academic.oup.com/jamia/article/31/9/1964/7705627) setup.
 
 ## Main Interpretation
 
@@ -17,6 +17,8 @@ ICL-EDR achieved the highest combined accuracy point estimate on the MedQA+PNA p
 The main efficiency result is that ICL-EDR reaches this accuracy at a token cost comparable to maximum-reasoning CoT and self-consistency baselines. It uses about 3x the token cost of medium-reasoning CoT, has similar combined accuracy to maximum-reasoning CoT, and uses substantially fewer tokens than higher-budget medical-specific TTS baselines such as MedPrompt, MDAgents, iMedRAG, and MedLA.
 
 ![Combined accuracy and token cost](figures/panel150_accuracy_cost.png)
+
+<sub>Figure abbreviations: SC = Self-Consistency; SC RJ = Self-Consistency with Routed Judge.</sub>
 
 Ablations identified disagreement-routed revision as the clearest contributor. Implicit raw-labelled cases had a higher combined point estimate than generated-rationale cases while avoiding rationale-generation calls. Robustness checks across open and closed model families showed that ICL-EDR improved MedQA accuracy in all tested settings and PNA accuracy in most tested settings.
 
