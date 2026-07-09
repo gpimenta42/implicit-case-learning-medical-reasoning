@@ -18,6 +18,7 @@ import pandas as pd
 from tqdm.auto import tqdm
 
 try:
+    from .env_utils import load_env
     from .prompts import (
         ANSWER_SCHEMA,
         JUDGE_SCHEMA,
@@ -32,6 +33,7 @@ try:
         setting_control_system_prompt,
     )
 except ImportError:
+    from env_utils import load_env
     from prompts import (
         ANSWER_SCHEMA,
         JUDGE_SCHEMA,
@@ -80,25 +82,6 @@ def find_project_root() -> Path:
 
 def utc_now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
-
-
-def load_env_file(path: Path) -> None:
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        key = key.strip()
-        value = value.strip().strip('"').strip("'")
-        if key and key not in os.environ:
-            os.environ[key] = value
-
-
-def load_env(project_root: Path) -> None:
-    for path in [project_root / ".env", Path.home() / ".env"]:
-        load_env_file(path)
 
 
 def get_hf_token(project_root: Path) -> str | None:

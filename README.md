@@ -54,7 +54,7 @@ Overall, the results support ICL-EDR as a lower-cost medical TTS design that can
 
 ### Environment and API Keys
 
-Create an environment and install the runtime dependencies:
+Use Python 3.10 or newer. Create an environment and install the runtime dependencies:
 
 ```bash
 python -m venv .venv
@@ -66,6 +66,12 @@ cp .env.example .env
 Then edit `.env` with your local API keys. The real `.env` file is ignored by git.
 
 `OPENAI_API_KEY` is required for the default OpenAI model calls and for building retrieval data with OpenAI embeddings. `HF_TOKEN` is only needed if you use Hugging Face Inference Providers.
+
+The CLI, notebook, runner, and retrieval builder load `.env` automatically through `python-dotenv`.
+
+## Data Note
+
+This public release does not redistribute full benchmark question text, retrieved source-case text, raw API logs, or embedding matrices. It includes synthetic dummy inputs, source links for public benchmarks, no-text panel keys, and no-text per-question outcomes for auditing reported values.
 
 ### Preparing Input Data
 
@@ -187,3 +193,20 @@ For all options:
 ```bash
 python scripts/run_icl_edr.py --help
 ```
+
+## Citation
+
+If you use this repository, please cite the thesis:
+
+```bibtex
+@mastersthesis{pimentapereira2026efficientttsmedicalreasoning,
+  title = {Efficient Test-Time Scaling for Medical Reasoning: Implicit Case-Learning Ensemble with Disagreement-Routed Revision},
+  author = {Pimenta Pereira, Gaspar},
+  school = {NOVA Information Management School},
+  year = {2026}
+}
+```
+
+## License
+
+This code is released under the MIT License. See `LICENSE`.

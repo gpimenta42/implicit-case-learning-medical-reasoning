@@ -10,6 +10,11 @@ import numpy as np
 import pandas as pd
 from tqdm.auto import tqdm
 
+try:
+    from .env_utils import load_env_from_cwd_and_home
+except ImportError:
+    from env_utils import load_env_from_cwd_and_home
+
 
 VALID_OPTIONS = ["A", "B", "C", "D", "E"]
 
@@ -151,27 +156,6 @@ def json_ready(value: Any) -> Any:
     if isinstance(value, np.floating):
         return float(value)
     return value
-
-
-def load_env_file(path: Path) -> None:
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        key = key.strip()
-        value = value.strip().strip('"').strip("'")
-        if key and key not in os.environ:
-            os.environ[key] = value
-
-
-def load_env_from_cwd_and_home() -> None:
-    cwd = Path.cwd().resolve()
-    for candidate in [cwd, *cwd.parents]:
-        load_env_file(candidate / ".env")
-    load_env_file(Path.home() / ".env")
 
 
 def embed_texts_openai(texts: list[str], *, model: str = "text-embedding-3-large", batch_size: int = 128) -> np.ndarray:

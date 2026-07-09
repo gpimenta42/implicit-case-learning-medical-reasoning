@@ -1,1 +1,1 @@
-"""ICL-EDR runner, retrieval builder, and prompt-building utilities."""
+"""ICL-EDR runner, retrieval builder, prompt-building, and environment utilities."""

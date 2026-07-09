@@ -1,5 +1,6 @@
-numpy
-pandas
-tqdm
-openai
-huggingface-hub
+numpy>=1.26
+pandas>=2.1
+tqdm>=4.66
+openai>=1.40,<3
+huggingface-hub>=0.23
+python-dotenv>=1.0
