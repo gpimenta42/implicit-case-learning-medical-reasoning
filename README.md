@@ -6,9 +6,19 @@
 
 ---
 
+## Contents
+
+- [Main Interpretation](#main-interpretation)
+- [Folder Layout](#folder-layout)
+- [Data Note](#data-note)
+- [Implementation Guide](#implementation-guide)
+  - [Quickstart](#quickstart)
+- [Citation](#citation)
+- [License](#license)
+
 This clean release accompanies the thesis experiments on **Implicit Case-Learning Ensemble with Disagreement-Routed Revision (ICL-EDR)**. ICL-EDR is a compact test-time scaling method for medical multiple-choice question (MCQ) reasoning: it retrieves target-similar labelled cases without generated source rationales, generates a small solver ensemble, and routes mixed ensembles to a revision judge.
 
-The selected ICL-EDR workflow retrieves two similar answer-labelled cases, generates a three-completion solver ensemble, and routes only mixed ensembles to a revision judge.
+The selected configuration uses two retrieved cases and a three-completion solver ensemble, illustrated below.
 
 <p align="center">
   <img src="figures/icl_edr_architecture.png" alt="ICL-EDR architecture" width="70%">
@@ -28,7 +38,7 @@ The main efficiency result is that ICL-EDR reaches this accuracy at a token cost
 
 Ablations identified disagreement-routed revision as the clearest contributor. Implicit raw-labelled cases had a higher combined point estimate than generated-rationale cases (73.92% vs. 72.33%) while avoiding rationale-generation calls, which would raise the estimated token cost from 2,956 to 4,845 tokens per question, about 64% more. Robustness checks across open and closed model families showed that ICL-EDR improved MedQA accuracy in all tested settings and PNA accuracy in most tested settings.
 
-Overall, the results support ICL-EDR as a lower-cost medical TTS design that can improve medical MCQ reasoning without relying only on high-budget retrieval or multi-agent pipelines.
+These results support ICL-EDR as a lower-cost medical TTS design that can improve medical MCQ reasoning without relying only on high-budget retrieval or multi-agent pipelines.
 
 ## Folder Layout
 
@@ -56,7 +66,22 @@ Overall, the results support ICL-EDR as a lower-cost medical TTS design that can
 - `data/`
   - Public-safe panel metadata without full question text.
 
+## Data Note
+
+This public release does not redistribute full benchmark question text, retrieved source-case text, raw API logs, or embedding matrices. It includes synthetic dummy inputs, source links for public benchmarks, no-text panel keys, and no-text per-question outcomes for auditing reported values.
+
 ## Implementation Guide
+
+### Quickstart
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env          # then add your OPENAI_API_KEY
+python scripts/run_icl_edr.py --build-retrieval   # dry run on synthetic data
+```
+
+Add `--run-api` to execute model calls. See all options with `python scripts/run_icl_edr.py --help`.
 
 ### Environment and API Keys
 
@@ -74,10 +99,6 @@ Then edit `.env` with your local API keys. The real `.env` file is ignored by gi
 `OPENAI_API_KEY` is required for the default OpenAI model calls and for building retrieval data with OpenAI embeddings. `HF_TOKEN` is only needed if you use Hugging Face Inference Providers.
 
 The CLI, notebook, runner, and retrieval builder load `.env` automatically through `python-dotenv`.
-
-## Data Note
-
-This public release does not redistribute full benchmark question text, retrieved source-case text, raw API logs, or embedding matrices. It includes synthetic dummy inputs, source links for public benchmarks, no-text panel keys, and no-text per-question outcomes for auditing reported values.
 
 ### Preparing Input Data
 
@@ -170,7 +191,8 @@ python scripts/run_icl_edr.py \
 
 Outputs are written under `results/run_outputs/<run-name>/`. The core implementation is in `src/icl_edr_runner.py`, with prompt construction in `src/prompts.py`.
 
-Common CLI options:
+<details>
+<summary>Full CLI options</summary>
 
 | Option | Values / default | Purpose |
 |---|---|---|
@@ -194,11 +216,15 @@ Common CLI options:
 | `--no-color` | flag, default off | Disable ANSI color in the final CLI summary. |
 | `--verbose-runner-output` | flag, default off | Show the lower-level runner progress and pandas summary output. |
 
+</details>
+
 For all options:
 
 ```bash
 python scripts/run_icl_edr.py --help
 ```
+
+---
 
 ## Citation
 
