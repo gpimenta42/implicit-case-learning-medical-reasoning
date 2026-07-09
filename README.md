@@ -8,7 +8,7 @@ The selected ICL-EDR workflow retrieves two similar answer-labelled cases, gener
 
 ![ICL-EDR architecture](figures/icl_edr_architecture.png)
 
-The main experiments evaluate ICL-EDR on balanced-difficulty MedQA and Portuguese National Residency Access Examination (PNA) panels using GPT-5.4-nano with medium reasoning effort. The method is compared with general test-time scaling baselines (CoT, Self Consistency, and Self-Consistency Routed Judge), medical-specific baselines ([MedPrompt](https://arxiv.org/abs/2311.16452), [MDAgents](https://arxiv.org/abs/2404.15155), [MedLA](https://ojs.aaai.org/index.php/AAAI/article/view/37052), and [iMedRAG](https://doi.org/10.1142/9789819807024_0015)), and the same model run with maximum reasoning effort. The routed-judge self-consistency baseline follows the [EnsReas](https://academic.oup.com/jamia/article/31/9/1964/7705627) setup.
+The main experiments evaluate ICL-EDR on balanced-difficulty MedQA and Portuguese National Residency Access Examination ([PNA; official ACSS page](https://www.acss.min-saude.pt/category/profissionais/carreiras/medica/internatomedico/prova-nacional-de-acesso/)) panels using GPT-5.4-nano with medium reasoning effort. The method is compared with general test-time scaling baselines (CoT, Self Consistency, and Self-Consistency Routed Judge), medical-specific baselines ([MedPrompt](https://arxiv.org/abs/2311.16452), [MDAgents](https://arxiv.org/abs/2404.15155), [MedLA](https://ojs.aaai.org/index.php/AAAI/article/view/37052), and [iMedRAG](https://doi.org/10.1142/9789819807024_0015)), and the same model run with maximum reasoning effort. The routed-judge self-consistency baseline follows the [EnsReas](https://academic.oup.com/jamia/article/31/9/1964/7705627) setup.
 
 ## Main Interpretation
 
