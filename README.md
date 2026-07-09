@@ -20,7 +20,7 @@ The main efficiency result is that ICL-EDR reaches this accuracy at a token cost
 
 <sub>Figure note: SC = Self-Consistency; SC RJ = Self-Consistency with Routed Judge. All TTS methods use GPT-5.4-nano with medium reasoning effort; CoT max uses the same model with xhigh reasoning effort.</sub>
 
-Ablations identified disagreement-routed revision as the clearest contributor. Implicit raw-labelled cases had a higher combined point estimate than generated-rationale cases while avoiding rationale-generation calls. Robustness checks across open and closed model families showed that ICL-EDR improved MedQA accuracy in all tested settings and PNA accuracy in most tested settings.
+Ablations identified disagreement-routed revision as the clearest contributor. Implicit raw-labelled cases had a higher combined point estimate than generated-rationale cases (73.92% vs. 72.33%) while avoiding rationale-generation calls, which would raise the estimated token cost from 2,956 to 4,845 tokens per question, about 64% more. Robustness checks across open and closed model families showed that ICL-EDR improved MedQA accuracy in all tested settings and PNA accuracy in most tested settings.
 
 Overall, the results support ICL-EDR as a lower-cost medical TTS design that can improve medical MCQ reasoning without relying only on high-budget retrieval or multi-agent pipelines.
 
