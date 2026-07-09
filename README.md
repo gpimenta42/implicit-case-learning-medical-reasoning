@@ -18,7 +18,7 @@ The main efficiency result is that ICL-EDR reaches this accuracy at a token cost
 
 ![Combined accuracy and token cost](figures/panel150_accuracy_cost.png)
 
-<sub>Figure abbreviations: SC = Self-Consistency; SC RJ = Self-Consistency with Routed Judge.</sub>
+<sub>Figure note: SC = Self-Consistency; SC RJ = Self-Consistency with Routed Judge. All TTS methods use GPT-5.4-nano with medium reasoning effort; CoT max uses the same model with xhigh reasoning effort.</sub>
 
 Ablations identified disagreement-routed revision as the clearest contributor. Implicit raw-labelled cases had a higher combined point estimate than generated-rationale cases while avoiding rationale-generation calls. Robustness checks across open and closed model families showed that ICL-EDR improved MedQA accuracy in all tested settings and PNA accuracy in most tested settings.
 
